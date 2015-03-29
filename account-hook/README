@@ -1,0 +1,7 @@
+Hook for user customization:
+
+- Expando attribute/values
+- Permission Checker
+- Added custom JSP
+- Added custom Service Impl
+- Added custom Language (ca,es,en)

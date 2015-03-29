@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hook PUBLIC "-//Liferay//DTD Hook 6.2.0//EN" "http://www.liferay.com/dtd/liferay-hook_6_2_0.dtd">
+
+<hook>
+    <language-properties>content/Language_es.properties</language-properties>
+    <language-properties>content/Language_ca.properties</language-properties>
+    <language-properties>content/Language.properties</language-properties>
+    <custom-jsp-dir>/META-INF/custom_jsps</custom-jsp-dir>
+
+    <struts-action>
+    	<struts-action-path>/login/create_account</struts-action-path>
+    	<struts-action-impl>com.anyplast.portal.login.action.CustomCreateAccountAction</struts-action-impl>
+    </struts-action>
+    <struts-action>
+    	<struts-action-path>/login/forgot_password</struts-action-path>
+    	<struts-action-impl>com.anyplast.portal.login.action.CustomForgotPasswordAction</struts-action-impl>
+    </struts-action>
+    <struts-action>
+    	<struts-action-path>/my_account/edit_user</struts-action-path>
+    	<struts-action-impl>com.anyplast.portal.myaccount.action.CustomEditUserAction</struts-action-impl>
+    </struts-action>
+</hook>

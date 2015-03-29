@@ -1,0 +1,69 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.anyplast.portal.hook</groupId>
+	<artifactId>account</artifactId>
+	<packaging>war</packaging>
+	<name>Account Hook</name>
+
+	<parent>
+		<groupId>com.anyplast.portal</groupId>
+		<artifactId>root</artifactId>
+		<version>1.0</version>
+		<relativePath>../root</relativePath>
+	</parent>
+
+	<build>
+		<finalName>account-hook</finalName>
+		<plugins>
+			<plugin>
+				<groupId>com.liferay.maven.plugins</groupId>
+				<artifactId>liferay-maven-plugin</artifactId>
+				<configuration>
+					<pluginType>hook</pluginType>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<dependencies>
+		<dependency>
+			<groupId>com.liferay.portal</groupId>
+			<artifactId>portal-service</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.liferay.portal</groupId>
+			<artifactId>util-java</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.liferay.portal</groupId>
+			<artifactId>util-taglib</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.liferay.portal</groupId>
+			<artifactId>util-bridges</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.portlet</groupId>
+			<artifactId>portlet-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.anyplast.portal</groupId>
+			<artifactId>mandrill</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>C:\Users\Javier\Documents\ANYPLAST\ENTORN\PRE\liferay-portal-6.2-ce-ga3\tomcat-7.0.42\lib\ext\mandrill-jar-with-dependencies.jar</systemPath>
+		</dependency>
+	</dependencies>
+</project>
