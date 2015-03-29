@@ -1,0 +1,79 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.anyplast.portal</groupId>
+	<artifactId>mandrill</artifactId>
+	<name>Mandrill connector</name>
+	<packaging>jar</packaging>
+
+	<parent>
+		<groupId>com.anyplast.portal</groupId>
+		<artifactId>root</artifactId>
+		<version>1.0</version>
+		<relativePath>../root</relativePath>
+	</parent>
+
+	<properties>
+		<lib.ext.directory>../../../ENTORN/PRE/liferay-portal-6.2-ce-ga3/tomcat-7.0.42/lib/ext</lib.ext.directory>
+		<jersey.version>2.17</jersey.version>
+		<jackson.version>1.9.13</jackson.version>
+		<jackson.annotation.version>2.5.1</jackson.annotation.version>
+	</properties>
+
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<!-- TO DELETE: Rest mobile project contain references to Jackson and Jersey.
+			 1. Move jackson and jersey libraries to /lib/ext
+			 2. Delete maven-assembly-plugin
+		 -->
+		<plugins>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>_package</id>
+						<phase>package</phase>
+					</execution>
+				</executions>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<outputDirectory>${lib.ext.directory}</outputDirectory>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jersey.core</groupId>
+			<artifactId>jersey-client</artifactId>
+			<version>${jersey.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-json-jackson</artifactId>
+			<version>${jersey.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>${jackson.annotation.version}</version>
+		</dependency>
+
+	</dependencies>
+</project>
